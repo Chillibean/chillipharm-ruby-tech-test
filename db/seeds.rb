@@ -12,9 +12,9 @@ include Rails.application.routes.url_helpers
 
 if Rails.env.eql?("development")
   # users
-  user_one = User.create(name: "ChilliBean Administrator", email: "admin@chillipharm.com", password: "Testingtest123", password_confirmation: "Testingtest123", chillibean_staff: true, activated: true, password_reset_date: DateTime.now)
-  user_two = User.create(name: "Joe Bloggs", email: "joe@chillipharm.com", password: "Testingtest123", password_confirmation: "Testingtest123", chillibean_staff: false, activated: true, password_reset_date: DateTime.now)
-  user_three = User.create(name: "Wanda Bloggs", email: "wanda@chillipharm.com", password: "Testingtest123", password_confirmation: "Testingtest123", chillibean_staff: false, activated: true, password_reset_date: DateTime.now)
+  user_one = User.create(name: "ChilliBean Administrator", email: "admin@chillipharm.com", password: "Testingtest123", password_confirmation: "Testingtest123")
+  user_two = User.create(name: "Joe Bloggs", email: "joe@chillipharm.com", password: "Testingtest123", password_confirmation: "Testingtest123")
+  user_three = User.create(name: "Wanda Bloggs", email: "wanda@chillipharm.com", password: "Testingtest123", password_confirmation: "Testingtest123")
 
   # Libraries
   first_library = Library.create(name: "A Populated Library", creator: user_one)

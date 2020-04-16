@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: libraries
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  assets_count :integer          default(0)
+#  creator_id   :integer
+#  deleted_at   :time
+#
 require 'rails_helper'
 
 RSpec.describe Library, :type => :model do
