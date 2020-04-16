@@ -28,4 +28,9 @@ class Asset < ApplicationRecord
   validates :filename, presence: true
   validates :library, presence: true
   validates :uploader, presence: true
+
+  scope :title_asc, -> { order(title: :asc) }
+  scope :title_desc, -> { order(title: :desc) }
+  scope :created_at_asc, -> { order(created_at: :asc) }
+  scope :created_at_desc, -> { order(created_at: :desc) }
 end
