@@ -21,6 +21,8 @@ class User < ApplicationRecord
   has_many :assets
   has_many :libraries, through: :library_users
   has_many :comments
+  has_one :search
+
   validates :email, uniqueness: true, presence: true
   validates_email_format_of :email
 

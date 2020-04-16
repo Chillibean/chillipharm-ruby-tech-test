@@ -36,6 +36,11 @@
       <%= link_to "All Libraries", root_path %>
     </div>
     <div class="col-xs-12 col-sm-6">
+      <div class="row product-branding product-branding-asset-listing clearfix">
+        <div class="col-xs-12">
+          <%= link_to " History of searches", search_index_path, style: "float: right; text-decoration:underline;" %>
+        </div>
+      </div>
       <%= form_tag library_path(current_library), method: :get do %>
       <div id="in-lib-search" class="input-group in-lib-search">
         <input type="text" name="search" class="form-control" placeholder="Search library" value="<%= params[:search] %>">
@@ -44,6 +49,7 @@
         </span>
       </div>
       <% end %>
+
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_09_13_112831) do
+ActiveRecord::Schema.define(version: 2020_04_16_194402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(version: 2017_09_13_112831) do
     t.integer "assets_count", default: 0
     t.integer "creator_id"
     t.time "deleted_at"
+  end
+
+  create_table "search", force: :cascade do |t|
+    t.string "search_param"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

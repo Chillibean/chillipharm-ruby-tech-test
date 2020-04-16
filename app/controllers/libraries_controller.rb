@@ -17,7 +17,8 @@ class LibrariesController < ApplicationController
       @assets = @assets.where(file_type: params[:filter])
     end
 
-    if params[:search]
+    if params[:search] && params[:filter] != ''
+      Search.find_or_create_by!(user: current_user, search_param: params[:search])
       @assets = @assets.where('upper(title) LIKE ?', '%' + params[:search].upcase + '%')
     end
 

@@ -53,4 +53,8 @@ if Rails.env.eql?("development")
 
   # Asset 8
   video_asset_three = Asset.create(filename: "trial 109.mov", title: "Trial 109", filesize: 107.megabytes, file_type: Asset.file_types[:video], uploader: user_two, library: second_library, created_at: 1.weeks.ago)
+
+  search_history = Search.create(user: user_one, search_param: 'one')
+  search_history_two = Search.create(user: user_one, search_param: 'two')
+  search_history_three = Search.create(user: user_one, search_param: 'three')
 end
