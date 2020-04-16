@@ -3,14 +3,14 @@ class LibrariesController < ApplicationController
     @assets = Asset.where(library_id: current_library.id)
 
     case params[:sort]
-      when 'created_at_desc'
-        @assets = @assets.created_at_desc
       when 'created_at_asc'
         @assets = @assets.created_at_asc
       when 'title_asc'
         @assets = @assets.title_asc
       when 'title_desc'
         @assets = @assets.title_desc
+    else
+      @assets = @assets.created_at_desc
     end
 
     if params[:filter] && params[:filter] != 'all'
