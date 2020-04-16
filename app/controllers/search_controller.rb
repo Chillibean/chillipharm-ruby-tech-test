@@ -8,6 +8,6 @@ class SearchController < ApplicationController
     @search = Search.find(params[:id])
     @search.destroy
 
-    redirect_to search_path
+    redirect_to search_index_path
   end
 end
