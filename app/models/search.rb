@@ -10,4 +10,7 @@
 #
 class Search < ApplicationRecord
   belongs_to :user
+
+  validates :user_id, presence: true
+  validates :search_param, presence: true
 end
