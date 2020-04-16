@@ -55,6 +55,12 @@ RSpec.describe LibrariesController, :type => :controller do
         get :show, params: { id: @library.id, search: 'some'}
         expect(assigns[:assets].collect{|a| a.id}).to eql(@library.assets.where('upper(title) LIKE ?', '%' + 'some'.upcase + '%').order(created_at: :desc).collect{|a| a.id})
       end
+
+      it "change search count" do
+        expect {
+          get :show, params: { id: @library.id, search: 'some'}
+        }.to change(Search, :count).by(1)
+      end
     end
 
     it "renders the 'show' template" do
