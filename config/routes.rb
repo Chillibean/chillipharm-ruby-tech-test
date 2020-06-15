@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root to: "libraries#index"
 
   resources :users
+  resources :search, only: [:index, :destroy]
+
   resources :libraries do
     member do
       get :info

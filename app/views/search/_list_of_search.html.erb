@@ -1,0 +1,13 @@
+<tr class="tr-asset-content" id="asset-<%= search.id %>" data-id="<%= search.id %>">
+  <td data-th="Select Asset"></td>
+  <!-- Important - Use the 'table-element-ellipsis' class to ensure the tooltip can find the center of this element -->
+  <td data-th="Title: "><span class="table-element-ellipsis" data-toggle="tooltip" data-placement="top" ><%= search.search_param %></span></td>
+
+  <td data-th="Date Added: "><span><%= date_format(search.created_at) %></span></td>
+
+  <td class="hidden-th-td">
+    <a href="<%= search_path(search) %>" rel="nofollow" data-method="delete">
+      Delete
+    </a>
+  </td>
+</tr>

@@ -1,0 +1,26 @@
+<% if @search_history.any? %>
+<div id="content-section-wrap">
+  <div id="assets" class="content-section list">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 no-pad">
+          <table class="list-table">
+            <%= render partial: 'list_of_search', collection: @search_history, as: :search %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well placeholder marg-top-20 marg-bottom-0">
+          <p>The Application is up an running!</p>
+          <p>Now just run <b><i>rake db:seed</i></b> to get some sample data</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

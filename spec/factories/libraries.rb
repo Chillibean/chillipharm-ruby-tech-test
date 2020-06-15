@@ -1,4 +1,15 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# == Schema Information
+#
+# Table name: libraries
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  assets_count :integer          default(0)
+#  creator_id   :integer
+#  deleted_at   :time
+#
 
 FactoryGirl.define do
   factory :library do
