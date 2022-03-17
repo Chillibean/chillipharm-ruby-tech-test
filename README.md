@@ -65,4 +65,4 @@ The task should take around 3 hours.  If you're spending longer than that, stop.
 
 ## Submission
 
-Fork this repository and submit a link to a private repository with your work, accessible to the Github user `jasonsof` and `wosborne`.  Alternatively, send a bundled repository showing your commit history using `git bundle create <yourname>.bundle --all --branches`
+Fork this repository and submit a link to a private repository with your work, accessible to the Github user `jasonsof`.  Alternatively, send a bundled repository showing your commit history using `git bundle create <yourname>.bundle --all --branches`
