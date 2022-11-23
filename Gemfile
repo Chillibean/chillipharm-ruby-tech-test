@@ -38,6 +38,7 @@ gem 'paranoia', '~> 2.4', '>= 2.4.2'
 
 group :development do
   gem 'binding_of_caller'
+  gem 'annotate'
 end
 
 group :development, :test do
@@ -57,3 +58,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'rails-controller-testing'
 end
+
+# fix NameError: uninitialized constant ApplicationJob::Shoryuken at /chillipharm-ruby-tech-test/app/jobs/application_job.rb:4:in `<class:ApplicationJob>'
+gem 'shoryuken'
+gem 'aws-sdk-sqs'

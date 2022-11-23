@@ -1,6 +1,28 @@
 class LibrariesController < ApplicationController
   def show
     @assets = Asset.where(library_id: current_library.id)
+
+    case params[:sort]
+      when 'created_at_asc'
+        @assets = @assets.created_at_asc
+      when 'title_asc'
+        @assets = @assets.title_asc
+      when 'title_desc'
+        @assets = @assets.title_desc
+    else
+      @assets = @assets.created_at_desc
+    end
+
+    if params[:filter] && params[:filter] != 'all'
+      @assets = @assets.where(file_type: params[:filter])
+    end
+
+    if params[:search] && params[:search].present?
+      Search.find_or_create_by!(user: current_user, search_param: params[:search])
+      @assets = @assets.where('upper(title) LIKE ?', '%' + params[:search].upcase + '%')
+    end
+
+    @assets
   end
 
   def index
